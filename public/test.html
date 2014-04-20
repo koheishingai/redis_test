@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CodeGarage</title>
+<link href='http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css' rel='stylesheet'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet'>
+ <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,700' rel='stylesheet'>
+<style type="text/css" media="screen">
+html, body {
+    padding:0px;
+    margin: 0px;
+    overflow: hidden;
+    background: #fff;
+}
+header {
+font: 13px/27px Arial,sans-serif;
+position: absolute;
+height: 39px;
+width: 100%;
+background: #FFFFFF;
+white-space: nowrap;
+display: -webkit-flex;
+display: flex;
+margin-left: 0!important;
+margin-right: 0!important;
+border-bottom: 1px solid rgb(218, 218, 218);
+}
+header::before {
+background: #e5e5e5;
+bottom: 0;
+content: '';
+display: none;
+height: 1px;
+left: 0;
+position: absolute;
+right: 0;
+}
+#update {
+width: 39px;
+background: white;
+border-right: 1px solid rgb(233, 233, 233);
+cursor: pointer;
+height: 39px;
+position: absolute;
+}
+#update::before {
+font-family: "FontAwesome";
+content: "\f0c7";
+margin-left: 10px;
+font-size: 24px;
+line-height: 42px;
+color: rgba(20, 166, 248, 0.88);
+cursor:pointer;
+}
+#update:hover {
+background: rgba(20, 166, 248, 0.88);
+}
+#update:active {
+background: rgba(20, 166, 248, 0.88);
+box-shadow: inset 0px 0px 5px rgba(0,0,0,.1);
+}
+#update:hover::before {
+color: #fff;
+}
+#url {
+font-family: 'Open Sans', sans-serif;
+font-weight: normal;
+display: block;
+margin: 0px;
+padding: 0.5em 1em 0.5em 0.7em;
+width: 420px;
+height: 23px;
+border: none;
+background: white;
+color: rgba(138, 138, 138, 0.8);
+font-size: 16px;
+line-height: 39px;
+opacity: 1;
+-webkit-transition: opacity 0.3s;
+transition: opacity 0.3s;
+border-right: 1px solid rgb(233, 233, 233);
+outline: none;
+position: absolute;
+margin-left: 40px;
+}
+#editor {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: calc(100% - 40px);
+}
+#logo {
+position: absolute;
+bottom: -3px;
+font-family: 'Titillium Web', sans-serif;
+color: rgba(0, 0, 0, 0.17);
+z-index: 9999;
+right: 4px;
+font-size: 29px;
+cursor: default;
+}
+#help {
+width: 39px;
+background: white;
+border-left: 1px solid rgb(233, 233, 233);
+cursor: pointer;
+height: 39px;
+right: 0px;
+position: absolute;
+}
+#help::before {
+font-family: "FontAwesome";
+content: "\f128";
+margin-left: 11px;
+font-size: 26px;
+line-height: 42px;
+color: rgba(0, 0, 0, 0.2);
+cursor: pointer;
+}
+#help:hover {
+background: rgba(0, 0, 0, 0.2);
+}
+#help:active {
+background: rgba(0, 0, 0, 0.2);
+box-shadow: inset 0px 0px 5px rgba(0,0,0,.1);
+}
+#help:hover::before {
+color: #fff;
+}
+#menu {
+width: 39px;
+background: white;
+border-left: 1px solid rgb(233, 233, 233);
+cursor: pointer;
+height: 39px;
+right: 40px;
+position: absolute;
+}
+#menu::before {
+font-family: "FontAwesome";
+content: "\f115";
+margin-left: 9px;
+font-size: 23px;
+line-height: 43px;
+color: rgba(255, 102, 89, 1);
+cursor: pointer;
+}
+#menu:hover {
+background: rgba(255, 102, 89, 1);
+}
+#menu:active {
+background: rgba(255, 102, 89, 1);
+box-shadow: inset 0px 0px 5px rgba(0,0,0,.1);
+}
+#menu:hover::before {
+color: #fff;
+}
+#new {
+width: 39px;
+background: white;
+border-left: 1px solid rgb(233, 233, 233);
+cursor: pointer;
+height: 39px;
+right: 80px;
+position: absolute;
+}
+#new::before {
+font-family: "FontAwesome";
+content: "\f067";
+margin-left: 11px;
+font-size: 22px;
+line-height: 43px;
+color: rgba(255, 194, 0, 1);
+cursor: pointer;
+}
+#new:hover {
+background: rgba(255, 194, 0, 1);
+}
+#new:active {
+background: rgba(255, 194, 0, 1);
+box-shadow: inset 0px 0px 5px rgba(0,0,0,.1);
+}
+#new:hover::before {
+color: #fff;
+}
+
+</style>
+</head>
+<body>
+<header>
+<div id="update"></div>
+<input id="url" placeholder="Please input this page's URL">
+<div id="new"></div>
+<div id="menu"></div>
+<div id="help"></div>
+</header>
+<div id="editor"></div>
+<div id="logo">CodeGarage</div>
+<script src="./src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/chrome");
+    editor.getSession().setMode("ace/mode/html");
+    editor.setFontSize("16px");
+    editor.setValue("<h1>Test</h1>", 1);
+</script>
+</body>
+</html>
